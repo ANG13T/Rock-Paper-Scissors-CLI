@@ -13,9 +13,11 @@ var choice = [
   }
 ];
 
-console.log('Now Playing...');
-console.log('Pick Rock, Paper, or Scissors');
-ask();
+
+  console.log('Now Playing...');
+  console.log('Pick Rock, Paper, or Scissors');
+  ask();
+
 
 function ask() {
   inquirer.prompt(choice).then(answers => {
