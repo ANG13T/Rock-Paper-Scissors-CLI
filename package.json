@@ -1,0 +1,27 @@
+{
+  "name": "rock-paper-scissor",
+  "version": "1.0.0",
+  "description": "A CLI app that lets you play Rock, Paper, Scissors!",
+  "main": "rps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Angelina Tsuboi",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^7.0.0"
+  },
+  "homepage": "https://github.com/angelina-tsuboi/Rock-Paper-Scissors-CLI#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelina-tsuboi/Rock-Paper-Scissors-CLI.git"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "keywords": [
+    "entertainment",
+    "rock-paper-scissors",
+    "game"
+  ]
+}
