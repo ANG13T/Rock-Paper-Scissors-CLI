@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const clc = require('cli-color');
 var userScore = 0;
 var computerScore = 0;
 var userObject = '';
@@ -9,12 +10,12 @@ var choice = [
   {
     type: 'input',
     name: 'object',
-    message: 'Rock, Paper or Scissors?'
+    message: 'Rock, Paper or Scissors? ✊ 🖐 🖖 :'
   }
 ];
 
 
-  console.log('Now Playing...');
+  console.log(clc.blueBright('Now Playing...'));
   console.log('Pick Rock, Paper, or Scissors');
   ask();
 
@@ -23,7 +24,6 @@ function ask() {
   inquirer.prompt(choice).then(answers => {
     userObject = answers.object;
     userObject = userObject.toUpperCase();
-    console.log(computerScore, userScore)
     if (computerScore < 3 && userScore < 3) {
       switch (userObject) {
         case 'ROCK':
@@ -41,14 +41,14 @@ function ask() {
       }
     } else {
       if (computerScore === 3) {
-        console.log('YOU LOSE THE GAME!');
+        console.log('YOU LOSE THE GAME! 💀');
       } else {
-        console.log('CONGRATS! YOU WIN!');
+        console.log('CONGRATS! YOU WIN! 🏆');
       }
     }
 
     function choose() {
-      console.log(`You Chose ${userObject}`);
+      console.log(clc.greenBright(`You Chose ${userObject}`));
       pick();
       check();
     }
@@ -66,12 +66,12 @@ function pick() {
   } else {
     computerObject = computerObjects[randNum];
   }
-  console.log(`CPU chose ${computerObject}`);
+  console.log(clc.redBright(`CPU chose ${computerObject}`));
 }
 
 function check() {
   if (computerObject === userObject) {
-    console.log('TIE!');
+    console.log('TIE! 🤝');
     console.log(`PLAYER Score: ${userScore} CPU Score: ${computerScore}`);
     ask();
   } else if (userObject === 'PAPER' && computerObject === 'ROCK') {
@@ -81,14 +81,14 @@ function check() {
   } else if (userObject === 'SCISSORS' && computerObject === 'PAPER') {
     winCase();
   } else {
-    console.log('You Lost This Round');
+    console.log('You Lost This Round 😭');
     computerScore++;
     console.log(`PLAYER Score: ${userScore} CPU Score: ${computerScore}`);
     ask();
   }
 
   function winCase() {
-    console.log('You Won This Round!');
+    console.log('You Won This Round! 🔥');
     userScore++;
     console.log(`PLAYER Score: ${userScore} CPU Score: ${computerScore}`);
     ask();

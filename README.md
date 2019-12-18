@@ -2,7 +2,8 @@
 # Rock-Paper-Scissors-CLI
 Play Rock, Paper, Scissors on the command line with this package!
 
-# Setup
+# Installation
+Use the package manager [npm](https://www.npmjs.com/) to install this CLI.
 ```bash
 npm init
 npm i rock-paper-scissor-cli --save
